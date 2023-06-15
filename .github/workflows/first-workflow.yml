@@ -2,6 +2,7 @@ name: 'hello-world'
 
 on:
   workflow_dispatch:
+  issues: opened
 
 jobs:
   job1:
@@ -15,6 +16,7 @@ jobs:
         run: echo 'hellow-world2'
         
   job2:
+    needs: job1
     name: Cowsays
     runs-on: ubuntu-latest
     steps:
