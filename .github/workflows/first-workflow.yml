@@ -4,6 +4,9 @@ on:
   workflow_dispatch:
   issues:
     types: [opened]
+    
+env:
+  PROJECT_MANAGER: 'Josiel'
 
 jobs:
   job1:
@@ -14,7 +17,7 @@ jobs:
         run: echo 'hellow-world1'
       
       - name: step2
-        run: echo 'hellow-world2'
+        run: echo 'hello $PROJECT_MANAGER'
         
   job2:
     needs: job1
