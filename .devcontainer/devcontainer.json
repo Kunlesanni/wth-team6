@@ -9,8 +9,9 @@
     "ghcr.io/devcontainers/features/dotnet:1": {},
      "installBicep": true,
 	 "version": "latest",
-    "azure-cli": {
-	"version": "latest"
+  "ghcr.io/devcontainers/features/azure-cli:1": {
+    "version": "latest"
+  }
   }
 
   
