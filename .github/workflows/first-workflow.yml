@@ -2,7 +2,8 @@ name: 'hello-world'
 
 on:
   workflow_dispatch:
-  issues: opened
+  issues:
+    types: [opened]
 
 jobs:
   job1:
