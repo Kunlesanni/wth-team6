@@ -49,9 +49,9 @@ jobs:
         uses: docker/setup-buildx-action@v1
     
       - name: DockerHub login
-        uses: docker/login-action@v1
+        uses: Azure/docker-login@v1
         with:
-             registry: ${{env.registryName}}
+             login-server: ${{env.registryName}}
              username: ${{ secrets.ACR_USERNAME }}
              password: ${{ secrets.ACR_PASSWORD}}
       
