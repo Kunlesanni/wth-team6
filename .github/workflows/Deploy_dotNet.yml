@@ -38,6 +38,7 @@ jobs:
 
   docker:
       runs-on: ubuntu-latest
+      needs: build
       
       steps:
       - name: Checkout
@@ -50,7 +51,7 @@ jobs:
       - name: DockerHub login
         uses: docker/login-action@v1
         with:
-             login-server: ${{env.registryName}}
+             registry: ${{env.registryName}}
              username: ${{ secrets.ACR_USERNAME }}
              password: ${{ secrets.ACR_PASSWORD}}
       
