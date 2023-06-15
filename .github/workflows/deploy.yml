@@ -2,10 +2,14 @@ name: 'Deploy'
 
 on:
   workflow_dispatch:
-  
-env:
-  targetEnv: dev
-
+    inputs:
+      name:
+        type: choice
+        description: Select Environment
+        options:
+        - dev
+        - test
+        - prod
 jobs:
   job1:
     runs-on: ubuntu-latest
@@ -26,7 +30,7 @@ jobs:
 #           subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
           resourceGroupName: ${{vars.RG}}
           template: ./ARM-Templates/container-webapp-template.json
-          parameters: webAppName=${{env.targetEnv}}-TeamSixWebApp
+          parameters: webAppName=${{github.events.inputs.name}}-TeamSixWebApp
           
           
       
