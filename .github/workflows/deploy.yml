@@ -4,12 +4,12 @@ on:
   workflow_dispatch:
   
 env:
-  PROJECT_MANAGER: Josiel
   targetEnv: dev
 
 jobs:
   job1:
     runs-on: ubuntu-latest
+    environment: ${{env.targetEnv}}
     
     steps:
       - name: Checkout
