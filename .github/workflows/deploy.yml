@@ -26,7 +26,7 @@ jobs:
 #           subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
           resourceGroupName: ${{vars.RG}}
           template: ./ARM-Templates/container-webapp-template.json
-          parameters: webAppName={{env.targetEnv}}-TeamSixWebApp
+          parameters: webAppName=${{env.targetEnv}}-TeamSixWebApp
           
           
       
