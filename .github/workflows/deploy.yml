@@ -18,12 +18,12 @@ jobs:
       - name: Login to Azure
         uses: azure/login@1.4.6
         with:
-            creds: ${{secret.AZURE_CREDENTIALS}}
+            creds: ${{secrets.AZURE_CREDENTIALS}}
             
       - name: deploy ARM TEMPLATE
         uses: azure/arm-deploy@v1
         with:
-          subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
+#           subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
           resourceGroupName: ${{vars.RG}}
           template: ./ARM-Templates/container-webapp-template.json
           parameters: webAppName={{env.targetEnv}}-TeamSixWebApp
