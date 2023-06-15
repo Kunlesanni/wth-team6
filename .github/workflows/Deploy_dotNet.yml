@@ -62,8 +62,22 @@ jobs:
         run: docker push $registryName/$repositoryName:$tag
       
       
+ webapp_deploy:
+      runs-on: ubuntu-latest
+      needs: docker      
+    - name: Azure WebApp
+      uses: Azure/webapps-deploy@v2.2.10
+      with:
+        # Name of the Azure Web App
+        app-name: 
+        # Applies to Web Apps(Windows and Linux) and Web App Containers(linux). Multi container scenario not supported. Publish profile (*.publishsettings) file contents with Web Deploy secrets
+
+        # Applies to Web App Containers only: Specify the fully qualified container image(s) name. For example, 'myregistry.azurecr.io/nginx:latest' or 'python:3.7.2-alpine/'. For multi-container scenario multiple container image names can be provided (multi-line separated)
+        images: 
+
       
       
+   
       
       
       
