@@ -7,9 +7,10 @@ on:
         type: choice
         description: Select Environment
         options:
-        - dev
-        - test
-        - prod
+          - dev
+          - test
+          - prod
+          
 jobs:
   job1:
     runs-on: ubuntu-latest
@@ -30,7 +31,7 @@ jobs:
 #           subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
           resourceGroupName: ${{vars.RG}}
           template: ./ARM-Templates/container-webapp-template.json
-          parameters: webAppName=${{github.events.inputs.name}}-TeamSixWebApp
+          parameters: webAppName=${{github.event.inputs.name}}-TeamSixWebApp
           
           
       
