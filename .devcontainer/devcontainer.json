@@ -7,11 +7,12 @@
 // Features to add to the dev container. More info: https://containers.dev/features.
   "features": {
     "ghcr.io/devcontainers/features/dotnet:1": {},
-//      "installBicep": true,
-// 	 "version": "latest",
+//      
   "ghcr.io/devcontainers/features/azure-cli:1": {
     "version": "latest"
-  }
+  },
+
+  "rchaganti/vsc-devcontainer-features/azurebicep": {}
   }
 
   
