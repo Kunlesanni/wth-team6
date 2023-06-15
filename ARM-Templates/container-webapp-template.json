@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "webAppName": {
-            "defaultValue": "WTH-156-team6-devops-dev",
+            "defaultValue": "team6-devops-dev",
             "type": "String"
         },
         "hostingPlanName": {
