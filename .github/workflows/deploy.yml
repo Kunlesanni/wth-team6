@@ -5,6 +5,7 @@ on:
   
 env:
   PROJECT_MANAGER: Josiel
+  targetEnv: dev
 
 jobs:
   job1:
@@ -20,4 +21,12 @@ jobs:
             creds: ${{secret.AZURE_CREDENTIALS}}
             
       - name: deploy ARM TEMPLATE
+        uses: azure/arm-deploy@v1
+        with:
+          subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
+          resourceGroupName: RG
+          template: ./azuredeploy.json
+          parameters: storageAccountType=Standard_LRS
+          
+          
       
